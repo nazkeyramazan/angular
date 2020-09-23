@@ -1,0 +1,44 @@
+
+h1{
+    margin-top: 0px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.calculator{
+    background-color: rgb(243, 238,231);
+    border: 2px solid;
+    border-radius: 3px;
+    position: relative;
+    margin: 7% , auto ,auto ,auto;
+    width: 380px;
+    text-align: center;
+}
+.result {
+    border-radius: 4px;
+}
+
+.responsive :hover{
+background-color: rgb(138, 135,136);
+color: rgb(243, 238,231);
+}
+
+
+.long{
+width: 70px;
+}
+button {
+    margin: 1px;
+    border-radius: 4px;
+    width: 80px;
+    height: 65px;
+    font-size: 20px;
+    border: 2px solid;
+}
+
+input{
+    width: 350px;
+    height: 60px;
+    text-align: right;
+    font-size: 1.7em;
+}
