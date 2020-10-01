@@ -1,0 +1,110 @@
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>Test</mat-toolbar-row>
+</mat-toolbar>
+<p> Нажмите несколько раз </p>
+
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Ваше имя</ng-template>
+      <mat-form-field>
+        <mat-label>Имя</mat-label>
+        <input matInput placeholder="Введите имя" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Следующий</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Ваш возраст</ng-template>
+      <div class="test" id="age">
+        
+        <input type="number" [formControl] = "numberControl">
+      </div>
+    
+      <div>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-button matStepperNext>Следующий</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Ваш пол</ng-template>
+      <div class="test" id="age">
+        
+          <input type="radio" value="Мужской" name= "radio" [formControl] = "radioControl" >Мужской
+         <input type="radio" value= "Женский" name= "radio" [formControl] = "radioControl" >Женский
+         <input type="radio" value="Я Иноланетянин" name= "radio" [formControl] = "radioControl" >Я Иноланетянин
+  
+      </div>
+    
+      <div>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-button matStepperNext>Следующий</button>
+      </div>
+    </form>
+  </mat-step>
+ 
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>  <label> На каком курсе  </label></ng-template>
+      <div class="test" id="subject">
+        <label> На каком курсе вы учитесь </label>
+      
+        <select [formControl] = "selectControl">
+          <option [value] = "1" >1</option>
+          <option [value] = "2" >2</option>
+          <option [value] = "2" >3</option>
+          <option [value] = "2" >4</option>
+        </select>
+      </div>
+    
+      <div>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-button matStepperNext>Следующий</button>
+      </div>
+    </form>
+  </mat-step>
+ 
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Какие предметы ты изучаешь?</ng-template>
+      <div class="test" id="subject">
+        <input type="checkbox" value="Angualar" [formControl] = "checkboxControl">Angualar
+        <input type="checkbox" value="UI-UX Design" [formControl] = "checkboxControl">UI-UX Design
+        <input type="checkbox" value="Computer Architecture" [formControl] = "checkboxControl">Computer Architecture
+        <input type="checkbox" value="Cybersecurity" [formControl] = "checkboxControl">Cybersecurity
+        <input type="checkbox" value="Media Security" [formControl] = "checkboxControl">Media Security
+      </div>
+    
+    
+      <div>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-button matStepperNext>Следующий</button>
+      </div>
+    </form>
+  </mat-step>
+ 
+  <mat-step>
+    <ng-template matStepLabel>все</ng-template>
+    <p>Спасибо за ответы</p>
+    <div>
+      <button mat-button matStepperPrevious>Назад</button>
+      <button mat-button (click)="stepper.reset()">Заново</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>
+
+<pre>
+  {{ form.value | json }}
+</pre>
