@@ -1,0 +1,53 @@
+
+<div class="container" >
+    <h2> My midterm project </h2>
+    <form class="was-validated" name="form" (submit) = "onSubmit()">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" [(ngModel)]="form.name" name="name" #name="ngModel" placeholder="Ramazam"  type="text" maxlength="45" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email"> Email </label>
+            <input class="form-control"[(ngModel)]="form.email" name="email" placeholder="nazkeyramazan@gmail.com"  minlength = "5" type="email" required #email="ngModel">
+        </div>
+
+        <div class="form-group"> 
+            <label for="username">Username</label>
+            <input class= "form-control" [(ngModel)]="form.username" #username="ngModel" name="username" placeholder="asperin"  type="text" minlength = "4" required>
+            <div class="valid-feedback"> Username us valid </div>
+            <div class="invalid-feedback">Username should be at least 4 symbol</div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" [(ngModel)]="form.password" #password="ngModel" name="password"type="password" placeholder="qwerty" minlength="5" required>
+            <div class="valid-feedback">Password is valid</div>
+            <div class="invalid-feedback">Password should be at least 5 symbol</div>
+        </div>
+
+        <div class="form-group">
+            <label for="phone"> Phone Number</label>
+            <input class="form-control" [(ngModel)]="form.phone" #phone="ngModel" name="phone" type="text" placeholder="87055196961" required>
+            <div class="valid-feedback"> Valid phone number </div>
+            <div class="invalid-feedback">Invalid phone number </div>
+        </div>
+
+        <button class="btn btn-primary btn-block" type="submit"  >Register</button>
+        
+        <a class="btn btn-outline-primary btn-block" routerLink="/login" role="button">Have an account? Click to login..</a>
+
+
+    </form>
+</div>
+
+<!-- 
+
+signIn(user: IUser) {
+        return this.http
+            .post('http://localhost:3000/sign-in/', user);
+    }   
+
+
+ -->

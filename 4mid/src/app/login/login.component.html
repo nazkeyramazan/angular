@@ -1,0 +1,25 @@
+
+
+
+<div class="container">
+    <h2> My midterm project </h2>
+<form class="was-validated"  name="form" (submit)=onSubmit()>
+    <div class = "form-group" >
+        <label for="username">Username</label>
+        <input class="form-control" [formControl]="username" placeholder="Enter Username" name="username" type="text" minlength ="4" required >
+        <div class="valid-feedback"> Username is valid </div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" [formControl]="password" placeholder="Enter password" name="password" type="password"  minlength ="4" required >
+        <div class="valid-feedback">   Password is valid</div>
+        <div class="invalid-feedback"> Please fill out this field </div>
+    </div>
+
+    <button class="btn btn-primary btn-block" type="submit"  > Login </button>
+    <a class="btn btn-outline-primary btn-block" routerLink="/register" role="button"> Do not have account? Click to register..</a>
+
+</form>
+</div>

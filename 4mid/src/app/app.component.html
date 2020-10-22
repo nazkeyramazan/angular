@@ -1,0 +1,9 @@
+<div *ngIf="authService.logged == true" >
+
+    <app-navigation></app-navigation>
+</div>
+
+<div *ngIf="authService.logged == false">
+    <!-- <app-login></app-login> -->
+</div>
+<router-outlet></router-outlet>

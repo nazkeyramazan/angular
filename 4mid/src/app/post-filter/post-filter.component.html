@@ -1,0 +1,48 @@
+<app-navigation></app-navigation>
+<div class="container col-sm-4 mx-auto">
+    <form  (submit) = "onSubmit()">
+    <div ><label class="mx-auto" for="iduser">Enter UserID to filter post by users </label> </div>
+    <input [(ngModel)]="iduser" name="iduser"placeholder="UserId">
+<button class="btn btn-block btn-primary mx-auto" type="submit">Select user </button> 
+</form>
+</div>
+
+<div class="container-fluid row">
+<div class="col-sm-4">
+    <table class="table table-striped table-bordered table-hover table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="row"> <strong> UserID   </strong></th>
+                <th scope="row"> <strong> User Name  </strong></th>
+            </tr>
+        </thead>
+        <tbody  >
+            <tr *ngFor = "let user of httpService.users">
+                <td>{{user.id}} </td>  
+                <td>{{user.name}}</td>
+              </tr>
+        </tbody>
+    </table>
+</div>
+<div class="col-sm-8" *ngIf="selected">
+    <table class="table table-striped table-bordered table-hover table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="row"> <strong> UserID   </strong></th>
+                <th scope="row"> <strong> PostID  </strong></th>
+                <th scope="row"> <strong> Title   </strong></th>
+                <th scope="row"> <strong> Body   </strong></th>
+            </tr>
+        </thead>
+
+        <tbody  >
+            <tr *ngFor = "let post of httpService.posts">
+                <td>{{post.userId}} </td>  
+                <td>{{post.id}}</td>
+                <td>{{post.title}}</td>
+                <td> {{post.body}}</td>
+              </tr>
+        </tbody>
+    </table>
+</div>
+</div>
