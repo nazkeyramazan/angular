@@ -6,20 +6,16 @@ import { AppComponent } from './app.component';
 import { ToastComponent } from './toast/toast.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { ToastpageComponent } from './toastpage/toastpage.component';
-import {MatIconModule} from "@angular/material/icon"
 import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    ToastComponent,
-    ToastpageComponent
+    ToastComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule,
     FormsModule,
     ToastrModule.forRoot({
       tapToDismiss: false,        

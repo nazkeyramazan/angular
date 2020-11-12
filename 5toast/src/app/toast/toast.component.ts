@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {ToastrService} from 'ngx-toastr';
+import { ToastService } from '../toastService';
 @Component({
   selector: 'app-toast',
   templateUrl: './toast.component.html',
@@ -7,7 +8,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class ToastComponent implements OnInit {
 
-  constructor(private toast : ToastrService) { }
+  constructor(private toast : ToastrService , public toastService : ToastService) { }
 
   ngOnInit(): void {
   }
@@ -79,6 +80,10 @@ export class ToastComponent implements OnInit {
       });
     }
     
+  }
+
+  public generateNumber(){
+    this.toastService.generateNumber();
   }
 
 
